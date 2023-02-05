@@ -19,6 +19,6 @@ public class CustomerConfiguration {
 
     @Bean
     CustomerRepo customerRepo() {
-        return useFakeCustomerRepo ? new CustomerFakeRepository() : new CustomerRepository();
+        return new CustomerFakeRepository();
     }
 }
