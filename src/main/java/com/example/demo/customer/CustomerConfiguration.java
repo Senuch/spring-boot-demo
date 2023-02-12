@@ -1,5 +1,6 @@
 package com.example.demo.customer;
 
+import com.example.demo.infoapp.InfoApp;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -11,9 +12,10 @@ public class CustomerConfiguration {
     private boolean useFakeCustomerRepo;
 
     @Bean
-    CommandLineRunner commandLineRunner() {
+    CommandLineRunner commandLineRunner(InfoApp infoApp) {
         return args -> {
             System.out.println("Command line runner hooray");
+            System.out.println(infoApp);
         };
     }
 
